@@ -1,19 +1,19 @@
-import { useState, useEffect } from 'react';
-import { Contract, ethers } from 'ethers';
+import { useState } from 'react';
+// import { Contract, ethers } from 'ethers';
 import { create } from 'ipfs-http-client'
 import './App.css';
-import  ERC721URIStorage   from "./ERC721URIStorage.json";
+// import  ERC721URIStorage   from "./ERC721URIStorage.json";
 
 const client = create('https://ipfs.infura.io:5001/api/v0');
 function App() {
-  let [contractAddress, setContractAddress] = useState("0x1cb1a5e65610aeff2551a50f76a87a7d3fb649c6");
+  // let [contractAddress, setContractAddress] = useState("0x1cb1a5e65610aeff2551a50f76a87a7d3fb649c6");
   let [maxNumber, setMaxNumber] = useState(0);
   let [sum, setSum] = useState(0);
   let [URL, setURL] = useState("");
   let [cid, setCid] = useState("");
 
   async function getMetadata() {
-    const option = { address: "0x1cb1a5e65610aeff2551a50f76a87a7d3fb649c6", chain: "Eth" };
+    // const option = { address: "0x1cb1a5e65610aeff2551a50f76a87a7d3fb649c6", chain: "Eth" };
   
   
   let jsonArray = [];
