@@ -8,6 +8,7 @@ const client = create('https://ipfs.infura.io:5001/api/v0');
 function App() {
   // let [contractAddress, setContractAddress] = useState("0x1cb1a5e65610aeff2551a50f76a87a7d3fb649c6");
   let [maxNumber, setMaxNumber] = useState(0);
+  let [minNumber, setMinNumber] = useState(0);
   let [sum, setSum] = useState(0);
   let [URL, setURL] = useState("");
   let [cid, setCid] = useState("");
@@ -18,7 +19,7 @@ function App() {
   
   let jsonArray = [];
  
-   for (let index = 0; index <= maxNumber; index++) {
+   for (let index = minNumber; index <= maxNumber; index++) {
       const data = await fetch(`https://gateway.pinata.cloud/ipfs/${cid}/${index}.json`)
       const json = await data.json()
       console.log(json)
@@ -63,7 +64,8 @@ function App() {
     <div className="App">
       {/* <input type="text" placeholder='base ipfs cid' onChange={(e)=> setContractAddress(e.currentTarget.value) } /> */}
       <input type="text" placeholder='cid' onChange={(e)=> setCid(e.currentTarget.value) } />
-      <input type="number" placeholder='number of nfts' onChange={(e)=> setMaxNumber(e.currentTarget.value) } />
+      <input type="number" placeholder='start token id' onChange={(e)=> setMinNumber(e.currentTarget.value) } />
+      <input type="number" placeholder='end token id' onChange={(e)=> setMaxNumber(e.currentTarget.value) } />
       <button onClick={getMetadata}> Click </button>
       <h2>{sum}</h2>
       {/* <button onClick={fetch}> Fetch </button> */}
