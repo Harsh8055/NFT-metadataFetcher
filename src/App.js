@@ -20,7 +20,8 @@ function App() {
   let jsonArray = [];
  
    for (let index = minNumber; index <= maxNumber; index++) {
-      const data = await fetch(`https://gateway.pinata.cloud/ipfs/${cid}/${index}.json`)
+      // const data = await fetch(`https://gateway.pinata.cloud/ipfs/${cid}/${index}.json`)
+      const data = await fetch(`https://gateway.pinata.cloud/ipfs/${cid}/${index}`)
       const json = await data.json()
       console.log(json)
       jsonArray.push(json);
